@@ -59,7 +59,7 @@ const Login = () => {
         backgroundImage: `url(${img})`,
       }}
     >
-      <div className="hero-content border-2 border-[rgba(255,255,255,.2)] bg-transparent backdrop-blur-xl shadow-sm w-full md:w-1/3 rounded-lg">
+      <div className="hero-content lg:border-2 border-[rgba(255,255,255,.2)] bg-transparent backdrop-blur-xl shadow-sm w-full lg:w-[600px] rounded-lg">
         <div className="flex items-center justify-center gap-5 flex-col py-20">
           <div className="w-full  p-10 pb-0">
             <h2 className="text-center mb-4 font-bold text-5xl text-white">
@@ -100,7 +100,7 @@ const Login = () => {
             </p>
           </div>
           <div className="w-full lg:w-[40%]">
-            <div className="flex flex-col w-full border-opacity-50">
+            <div className="flex flex-col w-full border-opacity-50 px-10 lg:px-0">
               <div className="text-center text-white">OR</div>
               <div
                 onClick={glogin}
