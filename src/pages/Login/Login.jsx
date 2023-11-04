@@ -104,7 +104,7 @@ const Login = () => {
               <div className="text-center text-white">OR</div>
               <div
                 onClick={glogin}
-                className="w-full py-4 px-2 flex gap-2 rounded justify-center items-center mt-5 border border-[#331f5f] bg-[#331f5f] hover:bg-[#281a47] text-white cursor-pointer btn"
+                className="w-full py-4 px-2 flex gap-2 rounded justify-center items-center mt-5 border border-[#331f5f] bg-[#331f5f] hover:bg-[#281a47] text-white cursor-pointer"
               >
                 <span>
                   <img src={gg} className="w-5" alt="" />
