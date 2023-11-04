@@ -15,10 +15,10 @@ const Navbar = () => {
   }, [user]);
   const menus = (
     <>
-      <li>
+      <li className="my-4 lg:my-0">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
+      <li className="my-4 lg:my-0">
         <NavLink to="/services">Services</NavLink>
       </li>
 
@@ -102,7 +102,7 @@ const Navbar = () => {
   );
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-      <div className="container px-5 lg:px-0 mx-auto flex flex-wrap items-center justify-between py-4">
+      <div className="container px-8 lg:px-0 mx-auto flex flex-wrap items-center justify-between py-4">
         <Link href="#" className="flex items-center">
           <img src={logo} className="h-8 mr-3" alt=" Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">

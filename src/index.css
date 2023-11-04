@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: "Space Grotesk", sans-serif;
+}
 #loginForm input::placeholder {
   color: white;
 }
