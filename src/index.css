@@ -8,3 +8,23 @@
 div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   background-color: #3c8599 !important;
 }
+
+.btn {
+  color: white;
+  background-color: #3c8599;
+  border-radius: 3px;
+  border: 1px solid #3c8599;
+  transition: 0.5s all ease-in-out;
+  padding: 10px 20px;
+}
+.btn:hover {
+  background-color: #212121;
+}
+
+.active {
+  color: white;
+  background-color: #3c8599;
+  border-radius: 3px;
+  border: 1px solid #3c8599;
+  padding: 10px 20px;
+}
