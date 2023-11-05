@@ -16,7 +16,6 @@ const Services = () => {
     },
   });
   if (isPending) {
-    console.log("murgi");
     return (
       <div
         role="status"
