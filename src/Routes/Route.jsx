@@ -4,6 +4,8 @@ import Login from "../pages/Login/Login";
 import Root from "../Layout/Root";
 import ErrorPage from "../pages/Errorpage/ErrorPage";
 import Registation from "../pages/Registration/Registation";
+import PvtRoute from "./PvtRoute";
+import AddServices from "../pages/AddService/addServices";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Registation></Registation>,
+      },
+      {
+        path: "/addServices",
+        element: (
+          <PvtRoute>
+            <AddServices></AddServices>
+          </PvtRoute>
+        ),
       },
     ],
   },

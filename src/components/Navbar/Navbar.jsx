@@ -1,4 +1,4 @@
-import { Link, NavLink, Navigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
@@ -6,9 +6,12 @@ import { initFlowbite } from "flowbite";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleLogOut = () => {
-    logOut().then(Navigate("/login")).catch();
+    logOut()
+      .then(navigate("/login"))
+      .catch((err) => console.log(err));
   };
   useEffect(() => {
     initFlowbite();

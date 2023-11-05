@@ -38,3 +38,6 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
+.hover\:bg-gray-100:hover {
+  color: #212121;
+}
