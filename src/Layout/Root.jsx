@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import { useEffect } from "react";
 import { initFlowbite } from "flowbite";
+import Footer from "../components/Footer/Footer";
 
 const Root = () => {
   useEffect(() => {
@@ -11,6 +12,7 @@ const Root = () => {
     <div>
       <Navbar></Navbar>
       <Outlet></Outlet>
+      <Footer></Footer>
     </div>
   );
 };

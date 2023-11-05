@@ -44,12 +44,8 @@ const Team = () => {
               spaceBetween: 20,
             },
             "@1.50": {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            "@2.50": {
               slidesPerView: 3,
-              spaceBetween: 30,
+              spaceBetween: 20,
             },
           }}
           className="mySwiper"
