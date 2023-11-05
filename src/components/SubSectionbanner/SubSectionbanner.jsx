@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const SubSectionbanner = ({ title, subTitle }) => {
   return (
     <div
-      className="error-banner min-h-[400px] flex  justify-center items-center"
+      className="error-banner min-h-[400px] flex  justify-center items-center bg-cover"
       style={{
         backgroundImage: `url(${img})`,
       }}

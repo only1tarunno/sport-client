@@ -6,6 +6,7 @@ import ErrorPage from "../pages/Errorpage/ErrorPage";
 import Registation from "../pages/Registration/Registation";
 import PvtRoute from "./PvtRoute";
 import AddServices from "../pages/AddService/addServices";
+import AllServices from "../pages/AllServices/AllServices";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/services",
+        element: <AllServices></AllServices>,
       },
       {
         path: "/login",

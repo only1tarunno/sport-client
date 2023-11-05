@@ -38,24 +38,27 @@ const AddServices = () => {
     });
   };
   return (
-    <div>
+    <div className="container mx-auto px-5 lg:px-0 py-14">
       <h2 className="font-bold text-[#212121] text-3xl lg:text-5xl my-3 text-center">
         Add Service
       </h2>
-      <form onSubmit={handleAddService} className="max-w-3xl mx-auto">
+      <form
+        onSubmit={handleAddService}
+        className="max-w-3xl mx-auto shadow-md p-8 rounded-md"
+      >
         <input
           type="text"
           placeholder="Service Image URL"
           name="serviceImage"
           required="required"
-          className="w-full my-4 p-3 rounded focus:outline-none border text-[#212121] "
+          className="w-full my-4 p-3 rounded focus:outline-none border border-[#ccc] text-[#212121] "
         />
         <input
           type="text"
           placeholder="Service Name"
           name="serviceName"
           required="required"
-          className="w-full my-4 p-3 rounded focus:outline-none border text-[#212121] "
+          className="w-full my-4 p-3 rounded focus:outline-none border border-[#ccc] text-[#212121] "
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <input
@@ -63,14 +66,14 @@ const AddServices = () => {
             defaultValue={user.displayName}
             disabled
             required="required"
-            className="w-full my-4 p-3 rounded focus:outline-none border text-[#212121] "
+            className="w-full my-4 p-3 rounded focus:outline-none border border-[#ccc] text-[#212121] "
           />
           <input
             type="email"
             value={user.email}
             disabled
             required="required"
-            className="w-full my-4 p-3 rounded focus:outline-none border text-[#212121] "
+            className="w-full my-4 p-3 rounded focus:outline-none border border-[#ccc] text-[#212121] "
           />
         </div>
 
@@ -80,14 +83,14 @@ const AddServices = () => {
             placeholder="Price"
             name="servicePrice"
             required="required"
-            className="w-full my-4 p-3 rounded focus:outline-none border text-[#212121] "
+            className="w-full my-4 p-3 rounded focus:outline-none border border-[#ccc] text-[#212121] "
           />
           <input
             type="text"
             placeholder="Service Area"
             name="serviceProviderLocation"
             required="required"
-            className="w-full my-4 p-3 rounded focus:outline-none border text-[#212121] "
+            className="w-full my-4 p-3 rounded focus:outline-none border border-[#ccc] text-[#212121] "
           />
         </div>
         <input
@@ -95,21 +98,21 @@ const AddServices = () => {
           placeholder="Service Provider Short Description"
           name="serviceProviderShortDescription"
           required="required"
-          className="w-full my-4 p-3 rounded focus:outline-none border text-[#212121] "
+          className="w-full my-4 p-3 rounded focus:outline-none border border-[#ccc] text-[#212121] "
         />
 
         <textarea
           name="serviceDescription"
           id=""
           placeholder="Service Description"
-          className="w-full my-4 p-3 rounded focus:outline-none border text-[#212121] "
+          className="w-full my-4 p-3 rounded focus:outline-none border border-[#ccc] text-[#212121] "
           cols="30"
           rows="6"
         ></textarea>
         <input
           type="submit"
           value="Add Service"
-          className="w-full rounded my-4 py-3 cursor-pointer text-xl bg-[#3a1e77] hover:bg-[#281a47] border-[#3a1e77] hover:text-white text-white"
+          className="w-full rounded my-4 py-3 cursor-pointer text-xl bg-[#3c8599] hover:bg-[#281a47] border border-[#ccc]-[#3a1e77] hover:text-white text-white"
         />
       </form>
     </div>

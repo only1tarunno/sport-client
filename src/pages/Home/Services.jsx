@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import Service from "./Service";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const {
@@ -69,11 +70,13 @@ const Services = () => {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-10 md:mt-14">
         {services.slice(0, 4).map((service) => (
-          <Service service={service} key={service.serviceName}></Service>
+          <Service service={service} key={service._id}></Service>
         ))}
       </div>
       <div className="text-center mt-10">
-        <button className="btn">Show All</button>
+        <Link to="/services">
+          <button className="btn">Show All</button>
+        </Link>
       </div>
     </div>
   );
