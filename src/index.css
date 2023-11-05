@@ -17,8 +17,9 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   background-color: #3c8599;
   border-radius: 3px;
   border: 1px solid #3c8599;
-  transition: 0.5s all ease-in-out;
+  transition: 0.3s all ease-in-out;
   padding: 10px 20px;
+  font-weight: 600;
 }
 .btn:hover {
   background-color: #212121;
@@ -30,4 +31,10 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   border-radius: 3px;
   border: 1px solid #3c8599;
   padding: 10px 20px;
+}
+.text-control {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
