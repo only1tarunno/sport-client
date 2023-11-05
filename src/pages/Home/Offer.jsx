@@ -1,4 +1,7 @@
 import offer1 from "../../assets/offer1.png";
+import offer2 from "../../assets/offer2.png";
+import offer3 from "../../assets/offer3.png";
+import offer4 from "../../assets/offer4.png";
 
 const Offer = () => {
   return (
@@ -29,12 +32,12 @@ const Offer = () => {
           </div>
           <div className="mt-10 lg:mt-14">
             <img
-              src={offer1}
-              alt="Skilled trainers"
+              src={offer2}
+              alt="Quality equipment"
               className="w-20 mx-auto mb-5"
             />
             <h3 className="text-white font-bold text-2xl mb-2">
-              Skilled trainers
+              Quality equipment
             </h3>
             <p className="text-[#D6D6D6] w-64 mx-auto">
               Our expert trainers with over 150 hours of education will work
@@ -43,12 +46,12 @@ const Offer = () => {
           </div>
           <div className="mt-10 lg:mt-14">
             <img
-              src={offer1}
+              src={offer3}
               alt="Skilled trainers"
               className="w-20 mx-auto mb-5"
             />
             <h3 className="text-white font-bold text-2xl mb-2">
-              Skilled trainers
+              Shower cabins
             </h3>
             <p className="text-[#D6D6D6] w-64 mx-auto">
               Our expert trainers with over 150 hours of education will work
@@ -57,12 +60,12 @@ const Offer = () => {
           </div>
           <div className="mt-10 lg:mt-14">
             <img
-              src={offer1}
+              src={offer4}
               alt="Skilled trainers"
               className="w-20 mx-auto mb-5"
             />
             <h3 className="text-white font-bold text-2xl mb-2">
-              Skilled trainers
+              Sport nutrition
             </h3>
             <p className="text-[#D6D6D6] w-64 mx-auto">
               Our expert trainers with over 150 hours of education will work

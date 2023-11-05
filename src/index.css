@@ -41,3 +41,6 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 .hover\:bg-gray-100:hover {
   color: #212121;
 }
+.swiper-wrapper {
+  padding-bottom: 35px;
+}
