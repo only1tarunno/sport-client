@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Service = ({ service }) => {
   const {
+    _id,
     serviceImage,
     serviceName,
     serviceDescription,
@@ -42,7 +44,9 @@ const Service = ({ service }) => {
             </div>
           </div>
 
-          <button className="btn">View Details</button>
+          <Link to={`service/${_id}`}>
+            <button className="btn">View Details</button>
+          </Link>
         </div>
       </div>
     </div>

@@ -11,14 +11,13 @@ const AddServices = () => {
     const form = e.target;
     const serviceImage = form.serviceImage.value;
     const serviceName = form.serviceName.value;
-    const serviceProviderImage = user.photoURL;
-    const serviceProviderName = user.displayName;
-    const email = user.email;
+    const serviceProviderImage = user?.photoURL;
+    const serviceProviderName = user?.displayName;
+    const email = user?.email;
     const servicePrice = form.servicePrice.value;
     const serviceProviderLocation = form.serviceProviderLocation.value;
     const serviceDescription = form.serviceDescription.value;
-    const serviceProviderShortDescription =
-      form.serviceProviderShortDescription.value;
+
     const data = {
       serviceImage,
       serviceName,
@@ -28,7 +27,6 @@ const AddServices = () => {
       serviceProviderLocation,
       serviceProviderImage,
       serviceDescription,
-      serviceProviderShortDescription,
     };
     axios.post("http://localhost:5000/services", data).then(() => {
       Swal.fire({
@@ -63,14 +61,14 @@ const AddServices = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <input
             type="text"
-            defaultValue={user.displayName}
+            defaultValue={user?.displayName}
             disabled
             required="required"
             className="w-full my-4 p-3 rounded focus:outline-none border border-[#ccc] text-[#212121] "
           />
           <input
             type="email"
-            value={user.email}
+            defaultValue={user?.email}
             disabled
             required="required"
             className="w-full my-4 p-3 rounded focus:outline-none border border-[#ccc] text-[#212121] "
@@ -93,13 +91,6 @@ const AddServices = () => {
             className="w-full my-4 p-3 rounded focus:outline-none border border-[#ccc] text-[#212121] "
           />
         </div>
-        <input
-          type="text"
-          placeholder="Service Provider Short Description"
-          name="serviceProviderShortDescription"
-          required="required"
-          className="w-full my-4 p-3 rounded focus:outline-none border border-[#ccc] text-[#212121] "
-        />
 
         <textarea
           name="serviceDescription"

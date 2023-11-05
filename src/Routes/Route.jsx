@@ -7,6 +7,7 @@ import Registation from "../pages/Registration/Registation";
 import PvtRoute from "./PvtRoute";
 import AddServices from "../pages/AddService/addServices";
 import AllServices from "../pages/AllServices/AllServices";
+import SingleService from "../pages/SingleService/SingleService";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,16 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Registation></Registation>,
+      },
+      {
+        path: "service/:id",
+        element: (
+          <PvtRoute>
+            <SingleService></SingleService>
+          </PvtRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.id}`),
       },
       {
         path: "/addServices",
