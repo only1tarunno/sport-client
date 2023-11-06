@@ -1,15 +1,15 @@
-import { useContext } from "react";
 import PropTypes from "prop-types";
-import { AuthContext } from "../Providers/AuthProviders";
+
 import { Navigate, useLocation } from "react-router-dom";
+import useAuth from "../components/hooks/useAuth";
 
 const PvtRoute = ({ children }) => {
-  const { user, spiner } = useContext(AuthContext);
+  const { user, spiner } = useAuth();
 
   const location = useLocation();
   if (spiner) {
     return (
-      <div className=" flex items-center justify-center pt-72">
+      <div className=" flex items-center justify-center py-72">
         <div role="status" className="w-20">
           <svg
             aria-hidden="true"

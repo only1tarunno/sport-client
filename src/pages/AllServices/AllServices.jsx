@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import axios from "axios";
+
 import AllService from "./AllService";
 import SubSectionbanner from "../../components/SubSectionbanner/SubSectionbanner";
 import ScrollToTop from "../../components/ScrollTop/ScrollTop";
+import useAxiosSecure from "../../components/hooks/useAxiosSecure";
 
 const AllServices = () => {
   const [allData, setAllData] = useState(6);
@@ -11,14 +12,15 @@ const AllServices = () => {
   const [services, setServices] = useState([]);
   const [spin, setspin] = useState(false);
   const [query, setquery] = useState("");
+  const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/services").then((res) => {
+    axiosSecure.get("/services").then((res) => {
       setServices(res.data);
       setspin(true);
       setHide(false);
     });
-  }, []);
+  }, [axiosSecure]);
 
   const handleMore = () => {
     setAllData(services.length);

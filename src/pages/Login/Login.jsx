@@ -1,13 +1,14 @@
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import gg from "../../assets/google.png";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { AuthContext } from "../../Providers/AuthProviders";
+
 import img from "../../assets/log-bg.jpg";
+import useAuth from "../../components/hooks/useAuth";
 
 const Login = () => {
-  const { logIn, googleLogin } = useContext(AuthContext);
+  const { logIn, googleLogin } = useAuth();
   const [showpass, setshowpass] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();

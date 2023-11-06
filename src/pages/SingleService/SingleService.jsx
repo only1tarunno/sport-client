@@ -1,12 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import ScrollToTop from "../../components/ScrollTop/ScrollTop";
 import SubSectionbanner from "../../components/SubSectionbanner/SubSectionbanner";
-import { useContext, useEffect } from "react";
-import { AuthContext } from "../../Providers/AuthProviders";
+import { useEffect } from "react";
+
 import { initFlowbite } from "flowbite";
+import useAuth from "../../components/hooks/useAuth";
 
 const SingleService = () => {
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
   const service = useLoaderData();
   const {
     email,

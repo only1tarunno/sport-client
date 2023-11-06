@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         element: <Registation></Registation>,
       },
       {
-        path: "service/:id",
+        path: "services/:id",
         element: (
           <PvtRoute>
             <SingleService></SingleService>

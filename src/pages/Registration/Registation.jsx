@@ -1,14 +1,15 @@
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import gg from "../../assets/google.png";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { AuthContext } from "../../Providers/AuthProviders";
+
 import img from "../../assets/log-bg.jpg";
 import { updateProfile } from "firebase/auth";
+import useAuth from "../../components/hooks/useAuth";
 
 const Registation = () => {
-  const { register, googleLogin, setUser } = useContext(AuthContext);
+  const { register, googleLogin, setUser } = useAuth;
   const [showpass, setshowpass] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();

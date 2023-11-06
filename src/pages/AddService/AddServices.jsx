@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import { AuthContext } from "../../Providers/AuthProviders";
-import axios from "axios";
 import Swal from "sweetalert2";
+import useAuth from "../../components/hooks/useAuth";
+import useAxiosSecure from "../../components/hooks/useAxiosSecure";
 
 const AddServices = () => {
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
+  const axiosSecure = useAxiosSecure();
 
   const handleAddService = (e) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ const AddServices = () => {
       serviceProviderImage,
       serviceDescription,
     };
-    axios.post("http://localhost:5000/services", data).then(() => {
+    axiosSecure.post("/services", data).then(() => {
       Swal.fire({
         icon: "success",
         title: "Service is Added",
@@ -55,6 +55,13 @@ const AddServices = () => {
           type="text"
           placeholder="Service Name"
           name="serviceName"
+          required="required"
+          className="w-full my-4 p-3 rounded focus:outline-none border border-[#ccc] text-[#212121] "
+        />
+        <input
+          type="text"
+          defaultValue={user?.photoURL}
+          disabled
           required="required"
           className="w-full my-4 p-3 rounded focus:outline-none border border-[#ccc] text-[#212121] "
         />

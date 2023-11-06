@@ -1,11 +1,12 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { useContext, useEffect } from "react";
-import { AuthContext } from "../../Providers/AuthProviders";
+import { useEffect } from "react";
+
 import { initFlowbite } from "flowbite";
+import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useAuth();
   const navigate = useNavigate();
 
   const handleLogOut = () => {
@@ -53,7 +54,7 @@ const Navbar = () => {
             {/* Dropdown menu  */}
             <div
               id="dropdownNavbar"
-              className="z-50 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+              className="hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
             >
               <ul
                 className="py-2 text-sm text-gray-700 dark:text-gray-400"
