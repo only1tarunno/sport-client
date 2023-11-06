@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 const MyBookingCard = ({ booking }) => {
   const { serviceImage, serviceName, date, servicePrice, address } = booking;
-  console.log(booking);
+
   return (
     <div>
       <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">

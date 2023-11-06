@@ -38,6 +38,7 @@ const SingleService = () => {
       date,
       address,
       servicePrice,
+      workStatus: "Pending",
     };
     console.log(data);
     axiosSecure.post("/bookings", data).then(() => {
