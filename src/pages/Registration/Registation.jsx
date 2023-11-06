@@ -97,7 +97,7 @@ const Registation = () => {
       <Helmet>
         <title>ClubFit | Registration</title>
       </Helmet>
-      <div className="hero-content lg:border-2 border-[rgba(255,255,255,.2)] bg-transparent backdrop-blur-xl shadow-sm w-full lg:w-[600px] rounded-lg">
+      <div className=" lg:border-2 border-[rgba(255,255,255,.2)] bg-transparent backdrop-blur-xl shadow-sm w-full lg:w-[600px] rounded-lg">
         <div className="flex items-center justify-center gap-5 flex-col py-20">
           <div className="w-full  p-10 pb-0">
             <h2 className="text-center mb-4 font-bold text-5xl text-white">
