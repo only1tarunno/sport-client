@@ -1,8 +1,6 @@
 import ScrollToTop from "../../components/ScrollTop/ScrollTop";
 import SubSectionbanner from "../../components/SubSectionbanner/SubSectionbanner";
 import { useEffect } from "react";
-
-import { initFlowbite } from "flowbite";
 import useAuth from "../../components/hooks/useAuth";
 import useAxiosSecure from "../../components/hooks/useAxiosSecure";
 import Swal from "sweetalert2";
@@ -23,7 +21,6 @@ const SingleService = () => {
     axiosSecure.get(`/services/${id}`).then((res) => {
       setService(res.data);
       setspin(true);
-      initFlowbite();
     });
   }, [axiosSecure, id]);
 
@@ -59,8 +56,11 @@ const SingleService = () => {
     axiosSecure.post("/bookings", data).then(() => {
       form.reset();
       Swal.fire({
+        position: "top-end",
         icon: "success",
         title: "Service is Booked",
+        showConfirmButton: false,
+        timer: 1500,
       });
     });
   };
@@ -154,50 +154,29 @@ const SingleService = () => {
                       </button>
                     </div>
                   ) : (
-                    <button
-                      data-modal-target="authentication-modal"
-                      data-modal-toggle="authentication-modal"
-                      className="btn"
-                    >
-                      Book Now
-                    </button>
-                  )}
-
-                  {/* <!-- Main modal --> */}
-                  <div
-                    id="authentication-modal"
-                    tabIndex="-1"
-                    aria-hidden="true"
-                    className="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
-                  >
-                    <div className="relative w-full max-w-md max-h-full">
-                      {/* <!-- Modal content --> */}
-                      <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                        <button
-                          type="button"
-                          className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                          data-modal-hide="authentication-modal"
-                        >
-                          <svg
-                            className="w-3 h-3"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 14 14"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                            />
-                          </svg>
-                          <span className="sr-only">Close modal</span>
-                        </button>
-                        <div className="px-6 py-6 lg:px-8">
+                    <div>
+                      <button
+                        className="btn w-full"
+                        onClick={() =>
+                          document.getElementById("my_modal_3").showModal()
+                        }
+                      >
+                        open modal
+                      </button>
+                      <dialog id="my_modal_3" className="modal">
+                        <div className="modal-box">
+                          <form method="dialog">
+                            {/* if there is a button in form, it will close the modal */}
+                            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                              ✕
+                            </button>
+                          </form>
                           {/* form start here  */}
-                          <form className="space-y-6" onSubmit={handleBook}>
+                          <form
+                            className="space-y-6"
+                            method="dialog"
+                            onSubmit={handleBook}
+                          >
                             <div>
                               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                 Service Name
@@ -238,7 +217,6 @@ const SingleService = () => {
                                 className="w-full  p-3 rounded focus:outline-none border border-[#ccc] text-[#212121] "
                               />
                             </div>
-
                             <div>
                               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                 Your Email
@@ -307,9 +285,9 @@ const SingleService = () => {
                             </button>
                           </form>
                         </div>
-                      </div>
+                      </dialog>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>
