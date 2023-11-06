@@ -5,10 +5,13 @@ import { useEffect } from "react";
 
 import { initFlowbite } from "flowbite";
 import useAuth from "../../components/hooks/useAuth";
+import useAxiosSecure from "../../components/hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const SingleService = () => {
   const { user } = useAuth();
   const service = useLoaderData();
+  const axiosSecure = useAxiosSecure();
   const {
     email,
     serviceImage,
@@ -37,6 +40,13 @@ const SingleService = () => {
       servicePrice,
     };
     console.log(data);
+    axiosSecure.post("/bookings", data).then(() => {
+      form.reset();
+      Swal.fire({
+        icon: "success",
+        title: "Service is Booked",
+      });
+    });
   };
 
   useEffect(() => {
@@ -244,7 +254,11 @@ const SingleService = () => {
                         />
                       </div>
 
-                      <button type="submit" className="btn w-full">
+                      <button
+                        type="submit"
+                        data-modal-hide="authentication-modal"
+                        className="btn w-full"
+                      >
                         Purchase this Service
                       </button>
                     </form>
