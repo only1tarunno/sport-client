@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import useAuth from "../../components/hooks/useAuth";
 import useAxiosSecure from "../../components/hooks/useAxiosSecure";
 import SubSectionbanner from "../../components/SubSectionbanner/SubSectionbanner";
+import { Helmet } from "react-helmet-async";
 
 const AddServices = () => {
   const { user } = useAuth();
@@ -38,6 +39,9 @@ const AddServices = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>ClubFit | Add Service</title>
+      </Helmet>
       <div>
         <SubSectionbanner
           title="Add Service"

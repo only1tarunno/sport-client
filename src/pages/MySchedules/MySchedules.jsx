@@ -7,6 +7,7 @@ import useAuth from "../../components/hooks/useAuth";
 import MyBookingCard from "./MyBookingCard";
 import noBook from "../../assets/no-book.jpg";
 import BookingTableRow from "./BookingTableRow";
+import { Helmet } from "react-helmet-async";
 
 const MySchedules = () => {
   const axiosSecure = useAxiosSecure();
@@ -36,6 +37,9 @@ const MySchedules = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>ClubFit | My Schedules</title>
+      </Helmet>
       <ScrollToTop></ScrollToTop>
       <div>
         <SubSectionbanner

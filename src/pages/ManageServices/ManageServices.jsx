@@ -7,6 +7,7 @@ import ManageServiceCard from "./ManageServiceCard";
 import Swal from "sweetalert2";
 import ScrollToTop from "../../components/ScrollTop/ScrollTop";
 import folder from "../../assets/folder.png";
+import { Helmet } from "react-helmet-async";
 
 const ManageServices = () => {
   const { user } = useAuth();
@@ -50,6 +51,9 @@ const ManageServices = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>ClubFit | My Services</title>
+      </Helmet>
       <ScrollToTop></ScrollToTop>
       <div>
         <SubSectionbanner

@@ -41,8 +41,6 @@ const router = createBrowserRouter([
             <SingleService></SingleService>
           </PvtRoute>
         ),
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
       },
       {
         path: "/myServices",
@@ -59,8 +57,6 @@ const router = createBrowserRouter([
             <UpdateService></UpdateService>
           </PvtRoute>
         ),
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
       },
       {
         path: "/addServices",

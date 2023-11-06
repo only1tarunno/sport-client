@@ -9,7 +9,7 @@ const PvtRoute = ({ children }) => {
   const location = useLocation();
   if (spiner) {
     return (
-      <div className=" flex items-center justify-center py-72">
+      <div className=" flex items-center justify-center min-h-screen">
         <div role="status" className="w-20">
           <svg
             aria-hidden="true"

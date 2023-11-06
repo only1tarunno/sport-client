@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 
 import img from "../../assets/log-bg.jpg";
 import useAuth from "../../components/hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { logIn, googleLogin } = useAuth();
@@ -60,6 +61,9 @@ const Login = () => {
         backgroundImage: `url(${img})`,
       }}
     >
+      <Helmet>
+        <title>ClubFit | Login</title>
+      </Helmet>
       <div className="hero-content lg:border-2 border-[rgba(255,255,255,.2)] bg-transparent backdrop-blur-xl shadow-sm w-full lg:w-[600px] rounded-lg">
         <div className="flex items-center justify-center gap-5 flex-col py-20">
           <div className="w-full  p-10 pb-0">

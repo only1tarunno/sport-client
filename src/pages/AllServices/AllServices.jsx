@@ -6,6 +6,7 @@ import SubSectionbanner from "../../components/SubSectionbanner/SubSectionbanner
 import ScrollToTop from "../../components/ScrollTop/ScrollTop";
 import useAxiosSecure from "../../components/hooks/useAxiosSecure";
 import noresult from "../../assets/no-data.png";
+import { Helmet } from "react-helmet-async";
 
 const AllServices = () => {
   const [allData, setAllData] = useState(6);
@@ -55,6 +56,9 @@ const AllServices = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>ClubFit | All Services</title>
+      </Helmet>
       <ScrollToTop></ScrollToTop>
       <div>
         <SubSectionbanner
