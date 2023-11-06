@@ -111,13 +111,29 @@ const SingleService = () => {
               </div>
             </div>
             {/* <!-- Modal toggle button --> */}
-            <button
-              data-modal-target="authentication-modal"
-              data-modal-toggle="authentication-modal"
-              className="btn"
-            >
-              Book Now
-            </button>
+            {user?.email === email ? (
+              <div>
+                <button
+                  onClick={() => {
+                    Swal.fire({
+                      icon: "Error",
+                      title: "You Can't Book Your Own Service",
+                    });
+                  }}
+                  className="btn w-full"
+                >
+                  Book Now
+                </button>
+              </div>
+            ) : (
+              <button
+                data-modal-target="authentication-modal"
+                data-modal-toggle="authentication-modal"
+                className="btn"
+              >
+                Book Now
+              </button>
+            )}
 
             {/* <!-- Main modal --> */}
             <div

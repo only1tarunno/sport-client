@@ -24,7 +24,13 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 .btn:hover {
   background-color: #212121;
 }
-
+.btn-secondary {
+  background-color: rgb(236, 90, 23);
+  border: 1px solid rgb(236, 90, 23);
+}
+.btn-secondary:hover {
+  background-color: rgb(148, 52, 8);
+}
 .active {
   color: white;
   background-color: #3c8599;

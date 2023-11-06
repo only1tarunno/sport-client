@@ -103,7 +103,7 @@ const AllServices = () => {
           </div>
         )}
         {/* all services start here  */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 ">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 ">
           {services.length > 0 ? (
             services
               .slice(0, allData)

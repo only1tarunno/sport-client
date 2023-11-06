@@ -68,7 +68,7 @@ const Services = () => {
           instructors and trainers.
         </p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-10 md:mt-14">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 mt-10 md:mt-14">
         {services.slice(0, 4).map((service) => (
           <Service service={service} key={service._id}></Service>
         ))}
