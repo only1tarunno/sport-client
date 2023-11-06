@@ -260,7 +260,7 @@ const SingleService = () => {
                           Price
                         </label>
                         <input
-                          type="number"
+                          type="text"
                           placeholder="Price"
                           defaultValue={servicePrice}
                           disabled

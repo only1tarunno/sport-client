@@ -66,7 +66,7 @@ const Login = () => {
             <h2 className="text-center mb-4 font-bold text-5xl text-white">
               Login
             </h2>
-            <form onSubmit={handleLogin} id="loginForm">
+            <form onSubmit={handleLogin} className="loginForm">
               <input
                 type="email"
                 placeholder="Email"

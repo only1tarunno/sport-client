@@ -9,7 +9,7 @@ import { updateProfile } from "firebase/auth";
 import useAuth from "../../components/hooks/useAuth";
 
 const Registation = () => {
-  const { register, googleLogin, setUser } = useAuth;
+  const { register, googleLogin, setUser } = useAuth();
   const [showpass, setshowpass] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -47,7 +47,9 @@ const Registation = () => {
         updateProfile(result.user, {
           displayName: name,
           photoURL: photourl,
-        }).then(() => setUser({ displayName: name, photoURL: photourl }));
+        }).then(() =>
+          setUser({ displayName: name, photoURL: photourl, email: email })
+        );
         Swal.fire({
           icon: "success",
           title: "Thank You",
@@ -95,9 +97,9 @@ const Registation = () => {
         <div className="flex items-center justify-center gap-5 flex-col py-20">
           <div className="w-full  p-10 pb-0">
             <h2 className="text-center mb-4 font-bold text-5xl text-white">
-              Login
+              Register
             </h2>
-            <form onSubmit={handleRegister} id="loginForm">
+            <form onSubmit={handleRegister} className="loginForm">
               <input
                 type="text"
                 placeholder="Name"
@@ -135,7 +137,7 @@ const Registation = () => {
               </div>
               <input
                 type="submit"
-                value="LogIn"
+                value="Register"
                 className="w-full rounded my-4 py-3 cursor-pointer text-xl bg-[#3a1e77] hover:bg-[#281a47] border-[#3a1e77] hover:text-white text-white"
               />
             </form>

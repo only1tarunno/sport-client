@@ -11,12 +11,14 @@ const ManageServices = () => {
   const { user } = useAuth();
   const [spin, setspin] = useState(false);
   const [services, setServices] = useState([]);
+  const [message, setmessage] = useState(true);
   const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
     axiosSecure.get(`/myservices?email=${user?.email}`).then((res) => {
       setServices(res.data);
       setspin(true);
+      setmessage(false);
     });
   }, [axiosSecure, user?.email]);
 
@@ -94,9 +96,13 @@ const ManageServices = () => {
             ))
           ) : (
             <div className="col-span-2">
-              <h2 className="text-center font-bold text-4xl">
-                No Service Found
-              </h2>
+              {message ? (
+                ""
+              ) : (
+                <h2 className="text-center font-bold text-4xl">
+                  You don&apos;t Add any Sevice Yet. Please Add some Service
+                </h2>
+              )}
             </div>
           )}
         </div>

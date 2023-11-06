@@ -9,6 +9,7 @@ import useAxiosSecure from "../../components/hooks/useAxiosSecure";
 const AllServices = () => {
   const [allData, setAllData] = useState(6);
   const [hide, setHide] = useState(true);
+  const [message, setmessage] = useState(true);
   const [services, setServices] = useState([]);
   const [spin, setspin] = useState(false);
   const [query, setquery] = useState("");
@@ -29,6 +30,9 @@ const AllServices = () => {
 
   const handleSearch = async () => {
     setspin(false);
+    setmessage(true);
+    setHide(true);
+    setServices([]);
     const response = await fetch("http://localhost:5000/search", {
       method: "POST",
       headers: {
@@ -41,6 +45,7 @@ const AllServices = () => {
       setServices(data);
       setspin(true);
       setHide(true);
+      setmessage(false);
       if (data.length > 6) {
         setAllData(data.length);
       }
@@ -112,9 +117,13 @@ const AllServices = () => {
               ))
           ) : (
             <div className="col-span-2">
-              <h2 className="text-center font-bold text-4xl">
-                No Service Found
-              </h2>
+              {message ? (
+                ""
+              ) : (
+                <h2 className="text-center font-bold text-4xl">
+                  No Service Found
+                </h2>
+              )}
             </div>
           )}
         </div>

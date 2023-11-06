@@ -48,7 +48,7 @@ const ManageServiceCard = ({ service, handleDelete }) => {
             </div>
           </div>
           <div className="flex gap-2 justify-center md:justify-start items-center">
-            <Link to={""}>
+            <Link to={`/updateService/${_id}`}>
               <button className="btn">Update</button>
             </Link>
 
