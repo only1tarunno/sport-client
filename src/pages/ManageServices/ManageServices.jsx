@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import ManageServiceCard from "./ManageServiceCard";
 import Swal from "sweetalert2";
 import ScrollToTop from "../../components/ScrollTop/ScrollTop";
+import folder from "../../assets/folder.png";
 
 const ManageServices = () => {
   const { user } = useAuth();
@@ -99,9 +100,15 @@ const ManageServices = () => {
               {message ? (
                 ""
               ) : (
-                <h2 className="text-center font-bold text-4xl">
-                  You don&apos;t Add any Sevice Yet. Please Add some Service
-                </h2>
+                <div className="py-14">
+                  <img src={folder} className="w-40 mx-auto" alt="" />
+                  <h2 className="text-center font-bold text-4xl mb-2">
+                    No Services
+                  </h2>
+                  <p className="text-2xl font-medium text-center">
+                    You don&apos;t Add any Sevices Yet. Please Add some Service
+                  </p>
+                </div>
               )}
             </div>
           )}

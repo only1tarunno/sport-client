@@ -5,6 +5,7 @@ import AllService from "./AllService";
 import SubSectionbanner from "../../components/SubSectionbanner/SubSectionbanner";
 import ScrollToTop from "../../components/ScrollTop/ScrollTop";
 import useAxiosSecure from "../../components/hooks/useAxiosSecure";
+import noresult from "../../assets/no-data.png";
 
 const AllServices = () => {
   const [allData, setAllData] = useState(6);
@@ -120,9 +121,15 @@ const AllServices = () => {
               {message ? (
                 ""
               ) : (
-                <h2 className="text-center font-bold text-4xl">
-                  No Service Found
-                </h2>
+                <div className="pb-14">
+                  <img src={noresult} className="w-40 mx-auto" alt="" />
+                  <h2 className="text-center font-bold text-4xl">
+                    No Service Found
+                  </h2>
+                  <p className="text-2xl font-medium text-center">
+                    Whoops...This information in not available for this moment
+                  </p>
+                </div>
               )}
             </div>
           )}
