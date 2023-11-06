@@ -54,8 +54,25 @@ const Navbar = () => {
             {/* Dropdown menu  */}
             <div
               id="dropdownNavbar"
-              className="hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+              className="hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-56 dark:bg-gray-700 dark:divide-gray-600"
             >
+              <div className="px-4 py-3 flex items-center gap-1">
+                <span className="block">
+                  <img
+                    src={user?.photoURL}
+                    className="w-10 h-10 rounded-full object-cover"
+                    alt=""
+                  />
+                </span>
+                <div>
+                  <span className="block text-sm text-gray-900 dark:text-white ">
+                    {user?.displayName}
+                  </span>
+                  <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">
+                    {user?.email}
+                  </span>
+                </div>
+              </div>
               <ul
                 className="py-2 text-sm text-gray-700 dark:text-gray-400"
                 aria-labelledby="dropdownLargeButton"

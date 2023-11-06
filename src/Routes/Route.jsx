@@ -8,6 +8,7 @@ import PvtRoute from "./PvtRoute";
 import AddServices from "../pages/AddService/addServices";
 import AllServices from "../pages/AllServices/AllServices";
 import SingleService from "../pages/SingleService/SingleService";
+import ManageServices from "../pages/ManageServices/ManageServices";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,14 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/services/${params.id}`),
+      },
+      {
+        path: "/myServices",
+        element: (
+          <PvtRoute>
+            <ManageServices></ManageServices>
+          </PvtRoute>
+        ),
       },
       {
         path: "/addServices",
