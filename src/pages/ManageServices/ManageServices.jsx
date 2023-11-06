@@ -105,7 +105,7 @@ const ManageServices = () => {
                   <h2 className="text-center font-bold text-4xl mb-2">
                     No Services
                   </h2>
-                  <p className="text-2xl font-medium text-center">
+                  <p className="text-xl md:text-2xl font-medium text-center">
                     You don&apos;t Add any Sevices Yet. Please Add some Service
                   </p>
                 </div>

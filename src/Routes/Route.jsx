@@ -10,6 +10,7 @@ import AllServices from "../pages/AllServices/AllServices";
 import SingleService from "../pages/SingleService/SingleService";
 import ManageServices from "../pages/ManageServices/ManageServices";
 import UpdateService from "../pages/ManageServices/UpdateService";
+import MySchedules from "../pages/MySchedules/MySchedules";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,14 @@ const router = createBrowserRouter([
         element: (
           <PvtRoute>
             <AddServices></AddServices>
+          </PvtRoute>
+        ),
+      },
+      {
+        path: "/mySchedules",
+        element: (
+          <PvtRoute>
+            <MySchedules></MySchedules>
           </PvtRoute>
         ),
       },

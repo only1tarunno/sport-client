@@ -109,7 +109,7 @@ const AllServices = () => {
           </div>
         )}
         {/* all services start here  */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 ">
+        <div className="grid grid-cols-1 gap-5 ">
           {services.length > 0 ? (
             services
               .slice(0, allData)
@@ -126,7 +126,7 @@ const AllServices = () => {
                   <h2 className="text-center font-bold text-4xl">
                     No Service Found
                   </h2>
-                  <p className="text-2xl font-medium text-center">
+                  <p className="text-xl md:text-2xl font-medium text-center">
                     Whoops...This information in not available for this moment
                   </p>
                 </div>
