@@ -1,6 +1,6 @@
 # ClubFit
 
-Live Link: https://fitness-and-sports-f762a.firebaseapp.com
+Live Link: https://fitness-and-sports-f762a.web.app
 
 Different features and functionalities of my website:
 
