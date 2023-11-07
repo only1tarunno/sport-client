@@ -1,8 +1,14 @@
-# React + Vite
+# ClubFit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Link: https://fitness-and-sports-f762a.firebaseapp.com
 
-Currently, two official plugins are available:
+Different features and functionalities of my website:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User can add services, update their services, also delete their sevices
+- User can book any services as they want
+- Provider can see their services is booked by another user from mySchedule page and can update the service status
+- User can see the other services of the same provider in service detail page
+- User can seacrh service by service name in ALL Service Page
+- If the search result won't match any service then user will see a relavant message
+- In MyService Page if their is no service then the provider will see a relavant message
+- Provider can't book their own services. If they want to book their own services then they will get a toast. Again provider can book services of other providers
