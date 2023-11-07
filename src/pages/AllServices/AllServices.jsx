@@ -46,13 +46,16 @@ const AllServices = () => {
     setmessage(true);
     setHide(true);
     setServices([]);
-    const response = await fetch("http://localhost:5000/search", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ query }),
-    });
+    const response = await fetch(
+      "https://zium-sport-server.vercel.app/search",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query }),
+      }
+    );
     if (response.ok) {
       const data = await response.json();
       setServices(data);

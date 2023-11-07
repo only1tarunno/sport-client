@@ -52,7 +52,7 @@ const AuthProviders = ({ children }) => {
       // if user exist we provide a token
       if (currentuser) {
         axios
-          .post("http://localhost:5000/jwt", loggedUser, {
+          .post("https://zium-sport-server.vercel.app/jwt", loggedUser, {
             withCredentials: true,
           })
           .then((res) => {
@@ -60,7 +60,7 @@ const AuthProviders = ({ children }) => {
           });
       } else {
         axios
-          .post("http://localhost:5000/logout", loggedUser, {
+          .post("https://zium-sport-server.vercel.app/logout", loggedUser, {
             withCredentials: true,
           })
           .then((res) => {
