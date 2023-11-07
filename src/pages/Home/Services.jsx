@@ -2,8 +2,14 @@ import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import Service from "./Service";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Services = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
   const {
     isPending,
     isError,
@@ -49,7 +55,13 @@ const Services = () => {
     });
   }
   return (
-    <div className="container mx-auto px-5 lg:px-0 my-10 lg:my-16">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+      transition={{ duration: 2, ease: "easeOut" }}
+      className="container mx-auto px-5 lg:px-0 my-10 lg:my-16"
+    >
       <div>
         <h3 className="text-xl text-[#212121] uppercase font-semibold text-center">
           OUR SERVICES
@@ -74,7 +86,7 @@ const Services = () => {
           <button className="btn">Show All</button>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

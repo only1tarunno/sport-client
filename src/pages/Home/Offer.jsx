@@ -2,10 +2,21 @@ import offer1 from "../../assets/offer1.png";
 import offer2 from "../../assets/offer2.png";
 import offer3 from "../../assets/offer3.png";
 import offer4 from "../../assets/offer4.png";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Offer = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
   return (
-    <div className="py-10 lg:py-16 bg-[#181818]">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+      transition={{ duration: 2, ease: "easeOut" }}
+      className="py-10 lg:py-16 bg-[#181818]"
+    >
       <div className="container mx-auto px-5 lg:px-0">
         <div className="">
           <h3 className="text-xl text-center text-white uppercase font-semibold">
@@ -74,7 +85,7 @@ const Offer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

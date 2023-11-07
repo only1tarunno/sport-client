@@ -9,10 +9,21 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Typewriter } from "react-simple-typewriter";
 import { Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Team = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
   return (
-    <div className="container mx-auto px-5 lg:px-0 my-10 lg:my-16">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+      transition={{ duration: 2, ease: "easeOut" }}
+      className="container mx-auto px-5 lg:px-0 my-10 lg:my-16"
+    >
       <div>
         <h3 className="text-xl text-[#212121] uppercase font-semibold text-center">
           OUR TRAINERS
@@ -119,7 +130,7 @@ const Team = () => {
           </SwiperSlide>
         </Swiper>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

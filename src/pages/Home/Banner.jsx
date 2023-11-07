@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-
+import { motion } from "framer-motion";
 import { Swiper } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -78,13 +77,32 @@ const Banner = () => {
     >
       <div className="container mx-auto min-h-[90vh] relative z-50 flex justify-center py-8 lg:py-0 lg:justify-between items-center flex-col lg:flex-row">
         <div className="w-full lg:w-[600px] space-y-4 px-5 lg:px-0 text-center lg:text-start">
-          <h2 className="font-bold text-4xl uppercase lg:text-7xl text-white">
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="font-bold text-4xl uppercase lg:text-7xl text-white"
+          >
             {curentinfo.name}
-          </h2>
-          <p className="text-base lg:text-lg text-white  font-semibold">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+            className="text-base lg:text-lg text-white  font-semibold"
+          >
             {curentinfo.description}
-          </p>
-          <button className="btn">Get started</button>
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 1, delay: 1, ease: "easeOut" }}
+          >
+            <button className="btn">Get started</button>
+          </motion.div>
         </div>
         <div className="w-full lg:w-1/2">
           <Swiper

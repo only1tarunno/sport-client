@@ -1,10 +1,22 @@
 import img1 from "../../assets/benefit1.jpg";
 import img2 from "../../assets/benefit-2.jpeg";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Benefit = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
   return (
     <div className="py-10 lg:py-16 bg-[#181818]">
-      <div className="container mx-auto px-5 lg:px-0 flex items-center justify-between gap-10 flex-wrap">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+        transition={{ duration: 2, ease: "easeOut" }}
+        className="container mx-auto px-5 lg:px-0 flex items-center justify-between gap-10 flex-wrap"
+      >
         <div className="lg:w-[40%] w-full order-2 lg:order-1">
           <img src={img1} className="w-full" alt="" />
         </div>
@@ -35,7 +47,7 @@ const Benefit = () => {
         <div className="lg:w-[40%] w-full order-4">
           <img src={img2} className="w-full" alt="" />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
