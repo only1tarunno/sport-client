@@ -15,21 +15,18 @@ const Banner = () => {
   const itemsData = [
     {
       name: "No matter your fitness level",
-      image: "https://i.ibb.co/37CDxTd/b-1.jpg",
       bgimg: "https://i.ibb.co/37CDxTd/b-1.jpg",
       description:
         " Whether you're a beginner taking your first steps towards a healthier lifestyle or an advanced athlete striving for peak performance, our fitness and sports services are designed to meet you where you are.",
     },
     {
       name: "MAKE REAL RESULTS HAPPEN",
-      image: "https://i.ibb.co/BcS0ntJ/b-2.jpg",
       bgimg: "https://i.ibb.co/BcS0ntJ/b-2.jpg",
       description:
         "Turn your fitness aspirations into tangible achievements with our dedicated training programs. Our expert instructors are committed to helping you achieve real, lasting results. Experience the difference and unlock your full potential today!",
     },
     {
       name: "MORE THAN WORKOUT",
-      image: "https://i.ibb.co/9W7VdJ4/b-3.jpg",
       bgimg: "https://i.ibb.co/9W7VdJ4/b-3.jpg",
       description:
         "It's a lifestyle. Elevate your fitness journey with our holistic approach, combining exercise, nutrition, and expert guidance. Discover a path to well-being, strength, and vitality.",
@@ -50,8 +47,8 @@ const Banner = () => {
     const singleSlider = itemsData.find(
       (singleSlider, index) => index === current
     );
-    const { name, image, description, bgimg } = singleSlider;
-    setCurrentinfo({ name, image, description, bgimg });
+    const { name, description, bgimg } = singleSlider;
+    setCurrentinfo({ name, description, bgimg });
   };
 
   const handlePrevClick = () => {
@@ -64,8 +61,8 @@ const Banner = () => {
     const singleSlider = itemsData.find(
       (singleSlider, index) => index === current
     );
-    const { name, image, description, bgimg } = singleSlider;
-    setCurrentinfo({ name, image, description, bgimg });
+    const { name, description, bgimg } = singleSlider;
+    setCurrentinfo({ name, description, bgimg });
   };
 
   return (
