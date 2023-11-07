@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import lottie from "lottie-web";
-
 import AllService from "./AllService";
 import SubSectionbanner from "../../components/SubSectionbanner/SubSectionbanner";
 import ScrollToTop from "../../components/ScrollTop/ScrollTop";
@@ -33,7 +32,7 @@ const AllServices = () => {
       renderer: "svg",
       loop: true,
       autoplay: true,
-      path: "../../../public/no-data.json",
+      path: "/no-data.json",
     });
   }, [services]);
 

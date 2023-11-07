@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 const MyBookingCard = ({ booking }) => {
-  const { serviceImage, serviceName, date, servicePrice, address } = booking;
+  const { serviceImage, serviceName, date, servicePrice, address, workStatus } =
+    booking;
 
   return (
     <div>
@@ -23,6 +24,20 @@ const MyBookingCard = ({ booking }) => {
           </p>
           <p className="font-normal text-gray-700 dark:text-gray-400 text-control text-center">
             $ {servicePrice} per session
+          </p>
+          <p className="font-normal text-gray-700 dark:text-gray-400 text-control pt-2 text-center">
+            <span className="font-bold">Status:</span>{" "}
+            <span
+              className={`text-white p-1 ${
+                workStatus === "Pending"
+                  ? "bg-[#ee3636]"
+                  : workStatus === "Completed"
+                  ? "bg-[#3c8599]"
+                  : "bg-[#ec5a17]"
+              }`}
+            >
+              {workStatus}
+            </span>
           </p>
         </div>
       </div>

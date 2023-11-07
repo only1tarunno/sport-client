@@ -44,14 +44,14 @@ const MySchedules = () => {
       renderer: "svg",
       loop: true,
       autoplay: true,
-      path: "../../../public/no-booking.json",
+      path: "/no-booking.json",
     });
     lottie.loadAnimation({
       container: pending.current,
       renderer: "svg",
       loop: true,
       autoplay: true,
-      path: "../../../public/pending.json",
+      path: "/pending.json",
     });
   }, [spin]);
 
