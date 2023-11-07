@@ -6,7 +6,7 @@ import useAxiosSecure from "../../components/hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import RelatedService from "./RelatedService";
 
 const SingleService = () => {

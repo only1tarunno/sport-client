@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ScrollToTop from "../../components/ScrollTop/ScrollTop";
 import SubSectionbanner from "../../components/SubSectionbanner/SubSectionbanner";
 import { useEffect } from "react";
 import useAxiosSecure from "../../components/hooks/useAxiosSecure";
 import useAuth from "../../components/hooks/useAuth";
 import MyBookingCard from "./MyBookingCard";
-import noBook from "../../assets/no-book.jpg";
 import BookingTableRow from "./BookingTableRow";
 import { Helmet } from "react-helmet-async";
+import lottie from "lottie-web";
 
 const MySchedules = () => {
   const axiosSecure = useAxiosSecure();
@@ -34,6 +34,26 @@ const MySchedules = () => {
       setspin(true);
     });
   }, [axiosSecure, user?.email]);
+
+  // for lottie animation
+  const animation = useRef(null);
+  const pending = useRef(null);
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: animation.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "../../../public/no-booking.json",
+    });
+    lottie.loadAnimation({
+      container: pending.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "../../../public/pending.json",
+    });
+  }, [spin]);
 
   return (
     <div>
@@ -95,7 +115,7 @@ const MySchedules = () => {
               ""
             ) : (
               <div className="py-14">
-                <img src={noBook} className="w-64 mx-auto " alt="" />
+                <div className="w-80 mx-auto" ref={animation}></div>
                 <h2 className="text-center font-bold text-4xl">No Services</h2>
                 <p className="text-xl md:text-2xl font-medium text-center">
                   No bookings have been made yet. Please book a service to get
@@ -153,7 +173,7 @@ const MySchedules = () => {
                 ""
               ) : (
                 <div className="py-14">
-                  <img src={noBook} className="w-64 mx-auto " alt="" />
+                  <div className="w-80 mx-auto mb-5" ref={pending}></div>
                   <h2 className="text-center font-bold text-4xl">
                     No Pending Works
                   </h2>

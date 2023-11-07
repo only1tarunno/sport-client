@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import lottie from "lottie-web";
 
 import AllService from "./AllService";
 import SubSectionbanner from "../../components/SubSectionbanner/SubSectionbanner";
 import ScrollToTop from "../../components/ScrollTop/ScrollTop";
 import useAxiosSecure from "../../components/hooks/useAxiosSecure";
-import noresult from "../../assets/no-data.png";
 import { Helmet } from "react-helmet-async";
 
 const AllServices = () => {
@@ -24,6 +24,18 @@ const AllServices = () => {
       setHide(false);
     });
   }, [axiosSecure]);
+
+  // for lottie animation
+  const animation = useRef(null);
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: animation.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "../../../public/no-data.json",
+    });
+  }, [services]);
 
   const handleMore = () => {
     setAllData(services.length);
@@ -126,7 +138,7 @@ const AllServices = () => {
                 ""
               ) : (
                 <div className="pb-14">
-                  <img src={noresult} className="w-40 mx-auto" alt="" />
+                  <div className="w-80 mx-auto" ref={animation}></div>
                   <h2 className="text-center font-bold text-4xl">
                     No Service Found
                   </h2>

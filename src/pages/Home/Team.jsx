@@ -7,7 +7,7 @@ import team5 from "../../assets/t5.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-
+import { Typewriter } from "react-simple-typewriter";
 import { Pagination } from "swiper/modules";
 
 const Team = () => {
@@ -18,7 +18,19 @@ const Team = () => {
           OUR TRAINERS
         </h3>
         <h2 className="font-bold text-[#212121] text-3xl lg:text-5xl my-3 text-center max-w-3xl mx-auto">
-          Meet our skilled team of professionals.
+          Our skilled team of {""}
+          <span style={{ color: "red", fontWeight: "bold" }}>
+            {/* Style will be inherited from the parent element */}
+            <Typewriter
+              words={["Experts", "Trainers", "Coaches"]}
+              loop={5}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </span>
         </h2>
       </div>
       <div className=" mt-10 md:mt-14">

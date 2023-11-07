@@ -15,7 +15,7 @@ import { EffectCoverflow } from "swiper/modules";
 const Banner = () => {
   const itemsData = [
     {
-      name: "No matter your fitness level.",
+      name: "No matter your fitness level",
       image: "https://i.ibb.co/37CDxTd/b-1.jpg",
       bgimg: "https://i.ibb.co/37CDxTd/b-1.jpg",
       description:
@@ -78,7 +78,7 @@ const Banner = () => {
     >
       <div className="container mx-auto min-h-[90vh] relative z-50 flex justify-center py-8 lg:py-0 lg:justify-between items-center flex-col lg:flex-row">
         <div className="w-full lg:w-[600px] space-y-4 px-5 lg:px-0 text-center lg:text-start">
-          <h2 className="font-bold text-4xl lg:text-7xl text-white">
+          <h2 className="font-bold text-4xl uppercase lg:text-7xl text-white">
             {curentinfo.name}
           </h2>
           <p className="text-base lg:text-lg text-white  font-semibold">

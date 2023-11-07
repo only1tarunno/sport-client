@@ -12,7 +12,7 @@ const Offer = () => {
             WHAT WE OFFER
           </h3>
           <h2 className="font-bold text-center text-white text-3xl lg:text-5xl mt-5">
-            The best standards <br /> anywhere.
+            The best standards <br /> anywhere
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center">

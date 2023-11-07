@@ -13,7 +13,7 @@ const Benefit = () => {
             OUR BENEFITS
           </h3>
           <h2 className="font-bold text-white text-3xl lg:text-5xl mt-5">
-            Unlimited group & <br /> personal trainings <br /> anywhere.
+            Unlimited group & <br /> personal trainings <br /> anywhere
           </h2>
         </div>
         <div className="lg:w-[40%] w-full order-3">
