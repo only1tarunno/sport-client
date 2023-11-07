@@ -2,8 +2,15 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import useAxiosSecure from "../../components/hooks/useAxiosSecure";
 const BookingTableRow = ({ work }) => {
-  const { _id, serviceImage, serviceName, date, servicePrice, workStatus } =
-    work;
+  const {
+    _id,
+    serviceImage,
+    serviceName,
+    date,
+    servicePrice,
+    workStatus,
+    address,
+  } = work;
   const [status, setStatus] = useState(workStatus);
   const axiosSecure = useAxiosSecure();
 
@@ -29,6 +36,7 @@ const BookingTableRow = ({ work }) => {
       </th>
       <td className="px-6 py-4">{serviceName}</td>
       <td className="px-6 py-4">{date}</td>
+      <td className="px-6 py-4">{address}</td>
       <td className="px-6 py-4">{servicePrice}</td>
       <td className="px-6 py-4">
         <select value={status} onChange={handleStatus} className="border-none">

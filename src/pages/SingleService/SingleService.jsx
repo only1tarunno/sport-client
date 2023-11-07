@@ -6,14 +6,14 @@ import useAxiosSecure from "../../components/hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import RelatedService from "./RelatedService";
 
 const SingleService = () => {
   const { user } = useAuth();
   const [spin, setspin] = useState(false);
-
   const [service, setService] = useState({});
-
+  const [related, setRelated] = useState([]);
   const axiosSecure = useAxiosSecure();
   const { id } = useParams();
 
@@ -52,7 +52,7 @@ const SingleService = () => {
       servicePrice,
       workStatus: "Pending",
     };
-    console.log(data);
+
     axiosSecure.post("/bookings", data).then(() => {
       form.reset();
       Swal.fire({
@@ -64,6 +64,12 @@ const SingleService = () => {
       });
     });
   };
+
+  useEffect(() => {
+    axiosSecure.get(`/myservices?email=${email}`).then((res) => {
+      setRelated(res.data);
+    });
+  }, [axiosSecure, email]);
 
   return (
     <div>
@@ -161,22 +167,18 @@ const SingleService = () => {
                           document.getElementById("my_modal_3").showModal()
                         }
                       >
-                        open modal
+                        Book Now
                       </button>
+
                       <dialog id="my_modal_3" className="modal">
                         <div className="modal-box">
                           <form method="dialog">
-                            {/* if there is a button in form, it will close the modal */}
                             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                               ✕
                             </button>
                           </form>
                           {/* form start here  */}
-                          <form
-                            className="space-y-6"
-                            method="dialog"
-                            onSubmit={handleBook}
-                          >
+                          <form className="space-y-6" onSubmit={handleBook}>
                             <div>
                               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                 Service Name
@@ -276,11 +278,7 @@ const SingleService = () => {
                               />
                             </div>
 
-                            <button
-                              type="submit"
-                              data-modal-hide="authentication-modal"
-                              className="btn w-full"
-                            >
+                            <button type="submit" className="btn w-full">
                               Purchase this Service
                             </button>
                           </form>
@@ -289,6 +287,28 @@ const SingleService = () => {
                     </div>
                   )}
                 </div>
+              </div>
+              {/* retated sevice section */}
+              <div>
+                {related.length > 1 ? (
+                  <div>
+                    <h5 className="text-2xl text-center lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mt-10 md:mt16 lg:mt-36 mb-5 md:mb-10">
+                      {serviceProviderName}&apos;s other services.
+                    </h5>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                      {related
+                        .filter((data) => data._id !== id)
+                        .map((data) => (
+                          <RelatedService
+                            key={data._id}
+                            data={data}
+                          ></RelatedService>
+                        ))}
+                    </div>
+                  </div>
+                ) : (
+                  ""
+                )}
               </div>
             </div>
           </div>
