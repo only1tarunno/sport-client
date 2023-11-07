@@ -17,7 +17,7 @@ const Offer = () => {
       transition={{ duration: 2, ease: "easeOut" }}
       className="py-10 lg:py-16 bg-[#181818]"
     >
-      <div className="container mx-auto px-5 lg:px-0">
+      <div className="container mx-auto px-5 xl:px-0">
         <div className="">
           <h3 className="text-xl text-center text-white uppercase font-semibold">
             WHAT WE OFFER

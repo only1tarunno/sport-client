@@ -60,7 +60,7 @@ const Services = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
       transition={{ duration: 2, ease: "easeOut" }}
-      className="container mx-auto px-5 lg:px-0 my-10 lg:my-16"
+      className="container mx-auto px-5 xl:px-0 my-10 lg:my-16"
     >
       <div>
         <h3 className="text-xl text-[#212121] uppercase font-semibold text-center">

@@ -3,10 +3,14 @@ import Navbar from "../../components/Navbar/Navbar";
 import SubSectionbanner from "../../components/SubSectionbanner/SubSectionbanner";
 import bg from "../../assets/404-bg.png";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const ErrorPage = () => {
   return (
     <div>
+      <Helmet>
+        <title>ClubFit | Error</title>
+      </Helmet>
       <Navbar></Navbar>
       <SubSectionbanner
         title="Error Page"

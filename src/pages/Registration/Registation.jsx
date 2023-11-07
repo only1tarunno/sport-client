@@ -157,7 +157,7 @@ const Registation = () => {
             </p>
           </div>
           <div className="w-full lg:w-[40%]">
-            <div className="flex flex-col w-full border-opacity-50 px-10 lg:px-0">
+            <div className="flex flex-col w-full border-opacity-50 px-10 xl:px-0">
               <div className="text-center text-white">OR</div>
               <div
                 onClick={glogin}

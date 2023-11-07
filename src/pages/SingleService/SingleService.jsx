@@ -89,7 +89,7 @@ const SingleService = () => {
                 subTitle={serviceName}
               ></SubSectionbanner>
             </div>
-            <div className="container mx-auto px-5 lg:px-0 my-10 ">
+            <div className="container mx-auto px-5 xl:px-0 my-10 ">
               {/* serviceprovider info  */}
               <div className=" space-y-3  p-10 flex flex-col  gap-3  items-center justify-start w-full lg:w-1/2 mx-auto">
                 <h2 className="font-bold text-2xl  lg:text-3xl">

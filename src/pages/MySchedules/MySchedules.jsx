@@ -95,7 +95,7 @@ const MySchedules = () => {
           </div>
         )}
       </div>
-      <div className="container mx-auto px-5 lg:px-0 py-14">
+      <div className="container mx-auto px-5 xl:px-0 py-14">
         {/* booking setion  */}
         <h2 className="font-bold text-3xl lg:text-5xl text-center">
           My Bookings

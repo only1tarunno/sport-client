@@ -50,7 +50,7 @@ const AddServices = () => {
           subTitle="AddService"
         ></SubSectionbanner>
       </div>
-      <div className="container mx-auto px-5 lg:px-0 py-14">
+      <div className="container mx-auto px-5 xl:px-0 py-14">
         <h2 className="font-bold text-[#212121] text-3xl lg:text-5xl my-5 text-center">
           Fill The Form TO Add Service
         </h2>

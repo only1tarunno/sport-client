@@ -47,7 +47,7 @@ const AllService = ({ service }) => {
             </div>
           </div>
           <Link to={_id} className="inline-block text-center lg:text-start">
-            <button className="btn">View Details</button>
+            <button className="btn w-full lg:w-auto">View Details</button>
           </Link>
         </div>
       </div>

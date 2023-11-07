@@ -81,7 +81,7 @@ const AllServices = () => {
         ></SubSectionbanner>
       </div>
       {/* serch option start here  */}
-      <div className="container mx-auto px-5 lg:px-0">
+      <div className="container mx-auto px-5 xl:px-0">
         <div className="my-10 md:my-14">
           <div className="w-full lg:w-1/2 mx-auto relative">
             <input

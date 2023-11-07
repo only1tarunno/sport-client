@@ -55,17 +55,13 @@ const AuthProviders = ({ children }) => {
           .post("https://zium-sport-server.vercel.app/jwt", loggedUser, {
             withCredentials: true,
           })
-          .then((res) => {
-            console.log(res.data);
-          });
+          .then(() => {});
       } else {
         axios
           .post("https://zium-sport-server.vercel.app/logout", loggedUser, {
             withCredentials: true,
           })
-          .then((res) => {
-            console.log(res.data);
-          });
+          .then(() => {});
       }
     });
 

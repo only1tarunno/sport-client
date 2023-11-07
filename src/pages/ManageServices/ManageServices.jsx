@@ -61,7 +61,7 @@ const ManageServices = () => {
           subTitle="MyServices"
         ></SubSectionbanner>
       </div>
-      <div className="container mx-auto px-5 lg:px-0 my-14">
+      <div className="container mx-auto px-5 xl:px-0 my-14">
         {" "}
         {/* spinner start here  */}
         {spin ? (

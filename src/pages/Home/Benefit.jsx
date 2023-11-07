@@ -15,7 +15,7 @@ const Benefit = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
         transition={{ duration: 2, ease: "easeOut" }}
-        className="container mx-auto px-5 lg:px-0 flex items-center justify-between gap-10 flex-wrap"
+        className="container mx-auto px-5 xl:px-0 flex items-center justify-between gap-10 flex-wrap"
       >
         <div className="lg:w-[40%] w-full order-2 lg:order-1">
           <img src={img1} className="w-full" alt="" />

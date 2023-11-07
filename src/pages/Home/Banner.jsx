@@ -73,7 +73,7 @@ const Banner = () => {
       className="home-banner  bg-no-repeat bg-cover"
     >
       <div className="container mx-auto min-h-[90vh] relative z-50 flex justify-center py-8 lg:py-0 lg:justify-between items-center flex-col lg:flex-row">
-        <div className="w-full lg:w-[600px] space-y-4 px-5 lg:px-0 text-center lg:text-start">
+        <div className="w-full lg:w-[600px] space-y-4 px-5 xl:px-0 text-center lg:text-start">
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
