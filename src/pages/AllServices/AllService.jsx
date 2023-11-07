@@ -46,7 +46,7 @@ const AllService = ({ service }) => {
               </p>
             </div>
           </div>
-          <Link to={_id}>
+          <Link to={_id} className="inline-block text-center lg:text-start">
             <button className="btn">View Details</button>
           </Link>
         </div>

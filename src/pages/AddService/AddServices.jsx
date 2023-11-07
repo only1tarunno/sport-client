@@ -34,6 +34,8 @@ const AddServices = () => {
       Swal.fire({
         icon: "success",
         title: "Service is Added",
+        showConfirmButton: false,
+        timer: 1500,
       });
     });
   };

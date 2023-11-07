@@ -55,20 +55,24 @@ const AuthProviders = ({ children }) => {
           .post("http://localhost:5000/jwt", loggedUser, {
             withCredentials: true,
           })
-          .then(() => {});
+          .then((res) => {
+            console.log(res.data);
+          });
       } else {
         axios
           .post("http://localhost:5000/logout", loggedUser, {
             withCredentials: true,
           })
-          .then(() => {});
+          .then((res) => {
+            console.log(res.data);
+          });
       }
     });
 
     return () => {
       subscribe();
     };
-  }, []);
+  }, [user?.email]);
 
   const authInfo = {
     user,

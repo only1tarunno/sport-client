@@ -55,6 +55,8 @@ const Registation = () => {
           icon: "success",
           title: "Thank You",
           text: "Your Registration was Succesful",
+          showConfirmButton: false,
+          timer: 1500,
         });
         navigate(location?.state ? location.state : "/");
       })
@@ -75,6 +77,8 @@ const Registation = () => {
           icon: "success",
           title: "Thank You",
           text: "Google Login was Succesful",
+          showConfirmButton: false,
+          timer: 1500,
         });
         navigate(location?.state ? location.state : "/");
       })

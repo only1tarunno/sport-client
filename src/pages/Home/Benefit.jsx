@@ -20,7 +20,7 @@ const Benefit = () => {
         <div className="lg:w-[40%] w-full order-2 lg:order-1">
           <img src={img1} className="w-full" alt="" />
         </div>
-        <div className="lg:w-[40%] w-full order-1 lg:order-2">
+        <div className="lg:w-[40%] w-full order-1 lg:order-2 text-center lg:text-start">
           <h3 className="text-xl text-white uppercase font-semibold">
             OUR BENEFITS
           </h3>
@@ -28,7 +28,7 @@ const Benefit = () => {
             Unlimited group & <br /> personal trainings <br /> anywhere
           </h2>
         </div>
-        <div className="lg:w-[40%] w-full order-3">
+        <div className="lg:w-[40%] w-full order-3 text-center lg:text-start">
           <h3 className="font-bold text-white text-2xl mb-5 lg:text-4xl ">
             Personal trainings
           </h3>
